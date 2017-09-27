@@ -1,0 +1,21 @@
+{
+  "name": "slot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "start": "webpack-dev-server --inline --hot --port 5000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zyama",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^0.28.7",
+    "file-loader": "^0.11.2",
+    "sass-loader": "^6.0.6",
+    "url-loader": "^0.5.9",
+    "webpack": "^3.6.0",
+    "webpack-dev-middleware": "^1.12.0",
+    "webpack-dev-server": "^2.8.2"
+  }
+}
