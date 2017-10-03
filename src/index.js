@@ -11,7 +11,9 @@ var Container = PIXI.Container,
     Sprite = PIXI.Sprite;
 
 //Main render
-var renderer = autoDetectRenderer(1, 1),
+var width = window.innerWidth;
+var height = window.innerHeight;
+var renderer = autoDetectRenderer(width, height),
     container = new Container();
 document.body.appendChild(renderer.view);
 renderer.render(container);
@@ -19,19 +21,30 @@ renderer.render(container);
 renderer.view.style.position = "absolute";
 renderer.view.style.display = "block";
 renderer.autoResize = true;
-renderer.resize(window.innerWidth, window.innerHeight);
+renderer.resize(width, height);
 
-//loader img
-loader.add(bgImg).load(setup);
+var baseTexture = new PIXI.BaseTexture.from(spriteJson.meta.image);
+var spritesheet = new PIXI.Spritesheet(baseTexture, spriteJson);
 
-function setup() {
-  var idSprite = resources[bgImg].texture;
+spritesheet.parse(function (textures) {
+
   var bg = new Sprite(
-    idSprite
+    textures['BG.png']
   );
+
+  bg.width = width;
+  bg.height = height;
 
   container.addChild(bg);
   renderer.render(container);
-}
+});
+
+
+
+// function setup() {
+
+
+
+// }
 
 

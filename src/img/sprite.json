@@ -93,7 +93,7 @@
 "meta": {
 	"app": "http://www.codeandweb.com/texturepacker",
 	"version": "1.0",
-	"image": "sprite.png",
+	"image": "/src/img/sprite.png",
 	"format": "RGBA8888",
 	"size": {"w":960,"h":862},
 	"scale": "1",
